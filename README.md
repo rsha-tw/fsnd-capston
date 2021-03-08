@@ -1,8 +1,8 @@
-## Casting Agency
+# Casting Agency
 
-## Full Stack Nano - IAM Final Project
+# Full Stack Nano - IAM Final Project
 
-# Introduction
+## Introduction
 
 The Casting Agency models a company that is responsible for creating movies and managing and assigning actors to those movies. You are an Executive Producer within the company and are creating a system to simplify and streamline your process.
 
@@ -17,25 +17,25 @@ https://deploy-capston.herokuapp.com/
 
 For buliding final Project in Nano Show what i learn
 
-1. Database with postgres and sqlalchemy (models.py)
-2. API with Flask (app.py)
-3. TDD Unittest (test_app.py)
-4. Authorization with Auth0 (auth.py)
-5. Deployment on Heroku
+1. Database with **postgres** and **sqlalchemy** (`models.py`)
+2. API with **Flask** (`app.py`)
+3. TDD **Unittest** (`test_app.py`)
+4. Authorization with **Auth0** (`auth.py`)
+5. Deployment on `Heroku`
 
 ## Development Setup
 
 1. **Download the project starter code locally**
 ```
 git clone https://github.com/rsha-tw/fsnd-capston.git
-
 ```
 
 3. **Initialize and activate a virtualenv using:**
 ```
+Make sure you have [python 3] or later installed
+
 source env/Scripts/activate
 source env/bin/activate 
-
 ```
 
 4. **Install the dependencies:**
@@ -43,7 +43,6 @@ source env/bin/activate
 pip install -r requirements.txt
 or 
 pip3 install -r requirements.txt
-
 ```
 
 5. **Run the development server:**
@@ -55,41 +54,40 @@ python3 app.py
 ```
 6. **Export Environment Variables:**
 
-Refer to the setup.sh file and export the environment variables for the project.
+  Refer to the setup.sh file and export the environment variables for the project.
 
 7. **Run Database Migrations:**
 ```
 python3 manage.py db init
 python3 manage.py db migrate
 python3 manage.py db upgrade
-
 ```
 ## Testing
 
-To run the tests, run
+To run the tests, run:
 ```
 dropdb capstone
 createdb capstone
 python test_app.py 
-
 ```
 ## API Reference
-* Base URL: Currently this application is only hosted locally. The backend is hosted at https://deploy-capston.herokuapp.com/
+# Getting Started
+  * Base URL: Currently this application is only hosted locally. The backend is hosted at https://deploy-capston.herokuapp.com/
 
-* Authentication: This application use Auth0 service
+  * Authentication: This application use Auth0 service
 
-* Use this link to get new token https://dev-cg254k-8.us.auth0.com/authorize?audience=capstone&response_type=token&client_id=0BJq9aQKYdBaRMQFvKmZWEbe2PMJ06Rz&redirect_uri=https://localhost:8080/login-results
+  * Use this link to get new token https://dev-cg254k-8.us.auth0.com/authorize?audience=capstone&response_type=token&client_id=0BJq9aQKYdBaRMQFvKmZWEbe2PMJ06Rz&redirect_uri=https://localhost:8080/login-results
 
-Users in this application are:
-  * Assistant : Can view actors and movies
-    * Email: ashootibebal@gmail.com
-    * Password: Rr12345678@
-  * Director : Assistant Access +  Modify on actors and movies
-    * Email: rasha@gmail.com
-    * Password: Rr12345678@
-  * Executive: Full Access
-    * Email: aseel@gmail.com
-    * Password: Rr12345678@
+  Users in this application are:
+    * Assistant : Can view actors and movies
+      * Email: ashootibebal@gmail.com
+      * Password: Rr12345678@
+    * Director : Assistant Access +  Modify on actors and movies
+      * Email: rasha@gmail.com
+      * Password: Rr12345678@
+    * Executive: Full Access
+      * Email: aseel@gmail.com
+      * Password: Rr12345678@
 
 # Error Handling
 Errors are returned as JSON in the following format:
@@ -99,7 +97,6 @@ Errors are returned as JSON in the following format:
     "error": 404,
     "message": "resource not found"
 }
-
 ```
 The API will return three types of errors:
 
@@ -110,7 +107,7 @@ The API will return three types of errors:
 
 # Endpoints
 
-# GET /actors
+### GET /actors
 
   * General: Return list of actors in Database
 
@@ -128,7 +125,7 @@ The API will return three types of errors:
 }
 
 ```
-# GET /movies
+### GET /movies
   * General: Return list of movies in Database
 
   * Sample: curl -L -X GET 'vast-stream-21858.herokuapp.com/movies' \ -H 'Authorization: Bearer Assisant_Token'
@@ -143,7 +140,7 @@ The API will return three types of errors:
     "success": true
 }
 ```
-# POST /actors
+### POST /actors
 * General:
 
     * Create actor using JSON Request Body
@@ -160,7 +157,7 @@ The API will return three types of errors:
 }
 
 ```
-# POST /movies
+### POST /movies
 * General:
 
   * Create movie using JSON Request Body
@@ -176,7 +173,7 @@ The API will return three types of errors:
 }
 ```
 
-# PATCH /actors/<actor_id>
+### PATCH /actors/<actor_id>
 * General:
 
     * Modify actor given id in URL provided the information to update
@@ -196,7 +193,7 @@ The API will return three types of errors:
 }
 ```
 
-# PATCH /movies/<movie_id>
+### PATCH /movies/<movie_id>
 * General:
    * Modify movie given id in URL provided the information to update
    * Sample:curl --location --request PATCH 'localhost:8080/movies/2' \
@@ -213,7 +210,7 @@ The API will return three types of errors:
     "success": true
 }
 ```
-# DELETE /actors/<actor_id>
+### DELETE /actors/<actor_id>
   * General: Delete an actor given id in URL
   * Sample:curl --location --request DELETE 'localhost:8080/actors/1' \
 --header 'Authorization: Bearer Producer_Token \
@@ -225,7 +222,7 @@ The API will return three types of errors:
     "success": true
 }
 ```
-# DELETE /movies/<movie_id>
+### DELETE /movies/<movie_id>
   * General: Delete movie given id in URL
   * curl --location --request DELETE 'localhost:8080/movies/3' \
 --header 'Authorization: Bearer Producer_Token \
@@ -237,7 +234,7 @@ The API will return three types of errors:
     "success": true
 }
 ```
-# Postman user
+## Postman user
 
 In this repo there is collection file exported 
 
