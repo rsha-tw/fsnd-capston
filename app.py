@@ -13,6 +13,10 @@ def create_app():
     app = Flask(__name__)
     setup_db(app)
     cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
+
+    @app.route('/')
+    def index():
+        return "Hello World"
     
 
     # Get all actors
