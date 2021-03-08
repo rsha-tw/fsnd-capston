@@ -1,8 +1,6 @@
-# Capston Project
+## Casting Agency
 
 ## Full Stack Nano - IAM Final Project
-
-# Casting Agency
 
 # Introduction
 
@@ -10,7 +8,9 @@ The Casting Agency models a company that is responsible for creating movies and 
 
 No frontend developed yet, only backend side.
 
-Application hosted on Heroku
+Application hosted on Heroku:
+
+https://deploy-capston.herokuapp.com/
 
 
 ## Motivation
@@ -24,19 +24,17 @@ For buliding final Project in Nano Show what i learn
 5. Deployment on Heroku
 
 ## Development Setup
+
 1. **Download the project starter code locally**
 ```
-git clone https://github.com/rsha-tw/FSND-capstone.git
+git clone https://github.com/rsha-tw/fsnd-capston.git
 
 ```
 
 3. **Initialize and activate a virtualenv using:**
 ```
-python -m virtualenv env
-source env/Scripts/activate 
-# for Windows
+source env/Scripts/activate
 source env/bin/activate 
-# for MacOs/Linux
 
 ```
 
@@ -67,6 +65,7 @@ python3 manage.py db upgrade
 
 ```
 ## Testing
+
 To run the tests, run
 ```
 dropdb capstone
@@ -74,6 +73,24 @@ createdb capstone
 python test_app.py 
 
 ```
+## API Reference
+* Base URL: Currently this application is only hosted locally. The backend is hosted at https://deploy-capston.herokuapp.com/
+
+* Authentication: This application use Auth0 service
+
+* Use this link to get new token https://dev-cg254k-8.us.auth0.com/authorize?audience=capstone&response_type=token&client_id=0BJq9aQKYdBaRMQFvKmZWEbe2PMJ06Rz&redirect_uri=https://localhost:8080/login-results
+
+Users in this application are:
+  * Assistant : Can view actors and movies
+    * Email: ashootibebal@gmail.com
+    * Password: Rr12345678@
+  * Director : Assistant Access +  Modify on actors and movies
+    * Email: rasha@gmail.com
+    * Password: Rr12345678@
+  * Executive: Full Access
+    * Email: aseel@gmail.com
+    * Password: Rr12345678@
+
 # Error Handling
 Errors are returned as JSON in the following format:
 ```
@@ -220,3 +237,9 @@ The API will return three types of errors:
     "success": true
 }
 ```
+# Postman user
+
+In this repo there is collection file exported 
+
+you can use it to test all API Provided in here
+
