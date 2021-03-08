@@ -17,10 +17,8 @@ def create_app():
     @app.route('/')
     def index():
         return "Hello World"
-    
 
     # Get all actors
-
     @app.route('/actors')
     @requires_auth('get:actors')
     def get_actors(self):
@@ -37,7 +35,6 @@ def create_app():
     @requires_auth('post:actors')
     def add_actor(self):
         body = request.get_json()
-
 
         name = body.get('name')
         age = body.get('age')
@@ -158,7 +155,7 @@ def create_app():
 
     @app.route('/movies/<int:movie_id>', methods=['DELETE'])
     @requires_auth('delete:movies')
-    def delete_movie( self,movie_id):
+    def delete_movie(self, movie_id):
         movie = Movie.query.get(movie_id)
 
         if movie is None:
