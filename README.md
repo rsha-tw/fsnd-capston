@@ -71,7 +71,7 @@ createdb capstone
 python test_app.py 
 ```
 ## API Reference
-# Getting Started
+### Getting Started
   * Base URL: Currently this application is only hosted locally. The backend is hosted at https://deploy-capston.herokuapp.com/
 
   * Authentication: This application use Auth0 service
@@ -89,7 +89,7 @@ python test_app.py
       * Email: aseel@gmail.com
       * Password: Rr12345678@
 
-# Error Handling
+## Error Handling
 Errors are returned as JSON in the following format:
 ```
 {
@@ -105,7 +105,7 @@ The API will return three types of errors:
 * 401 - Unauthorized
 * 400 - bad request
 
-# Endpoints
+## Endpoints
 
 ### GET /actors
 
